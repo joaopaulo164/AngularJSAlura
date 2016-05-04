@@ -5,6 +5,8 @@
 angular.module('alurapic').controller('FotosController', function($scope, $http){ //injeção do scope para ligação entre o controller e a view e http para realizar requisições AJAX
 
     $scope.fotos = [];
+    $scope.filtro = '';
+
 
     $http.get('v1/fotos') //Atalho para promesse
         .success(function(fotos){
