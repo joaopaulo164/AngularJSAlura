@@ -15,7 +15,7 @@ angular.module('alurapic',['minhasDiretivas','ngAnimate','ngRoute']) //injetar d
 
     $routeProvider.when('/fotos/new', {
         templateUrl: 'partials/foto.html',
-        controller: 'FotosController'
+        controller: 'FotoController'
     });
     //Redirecionamento para página principal caso tente acessar uma rota que não exista
     $routeProvider.otherwise({ redirectTo: '/fotos'});
