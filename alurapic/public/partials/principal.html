@@ -18,6 +18,6 @@
 
 <div class="row">
     <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}"> <!-- ng-repeat para iterar pela lista de fotos -->
-        <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"> <!-- foto.url acessa a foto dependurada no scope -->
+        <minha-foto url="{{foto.url}}" alt="{{foto.titulo}}"></minha-foto> <!-- foto.url acessa a foto dependurada no scope -->
     </meu-painel><!-- fim o painel-->
 </div>
