@@ -2,7 +2,7 @@
  * Created by Joao on 03/05/2016.
  */
 
-angular.module('alurapic',['minhasDiretivas','ngAnimate','ngRoute']) //injetar diretiva no modulo principal
+angular.module('alurapic',['minhasDiretivas','ngAnimate','ngRoute','meusServicos']) //injetar diretiva no modulo principal
 .config(function($routeProvider, $locationProvider){ // $routeProvider = habilita rotas
 
     $locationProvider.html5Mode(true); // $locationProvider = sem hash "#" na URL do navegador - por meio HTML 5
