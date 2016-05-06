@@ -2,7 +2,10 @@
  * Created by Joao on 04/05/2016.
  */
 
-angular.module('alurapic').controller('FotoController',function($scope, cadastroDeFotos, recursoFoto, $routeParams){
+angular.module('alurapic')
+    //.controller('FotoController',function($scope, recursoFoto, $routeParams, cadastroDeFotos){ //Injeção de dependências padrão
+    //Abaixo injeção de dependências que evitam a quebra do código na minificação dos Scripts
+    .controller('FotoController', ['$scope', 'recursoFoto', '$routeParams', 'cadastroDeFotos', function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
 
     $scope.foto = {};
     $scope.mensagem = '';
@@ -25,6 +28,11 @@ angular.module('alurapic').controller('FotoController',function($scope, cadastro
                 .then(function(dados){
                     $scope.mensagem = dados.mensagem;
                     if(dados.inclusao) $scope.foto = {};
+
+                    //$scope.focado = true;  //Utilizado no $watch da directive meuFocus
+
+                    //$scope.$broadcast('fotoCadastrada');  //Desaclopado para meus-servicos
+
                 })
                 .catch(function(dados){
                     $scope.mensagem = dados.mensagem;
@@ -33,4 +41,4 @@ angular.module('alurapic').controller('FotoController',function($scope, cadastro
         }
     }
 
-});
+}]);
